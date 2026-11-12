@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Banners | C&P Studio</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #050505; color: #e6edf3; line-height: 1.6; overflow-x: hidden; }
+        .background-effects { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background: radial-gradient(circle at 50% 0%, #111a2e 0%, #050505 60%); }
+        .orb { position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.3; animation: float 12s infinite ease-in-out alternate; }
+        .orb-blue { background: #0d6efd; width: 400px; height: 400px; top: -100px; right: -100px; }
+        .orb-teal { background: #00d2ff; width: 300px; height: 300px; bottom: -50px; left: -150px; animation-delay: -6s; }
+        @keyframes float { 0% { transform: translateY(0px) scale(1); } 100% { transform: translateY(40px) scale(1.1); } }
+        
+        nav { padding: 20px 40px; display: flex; justify-content: center; align-items: center; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); position: sticky; top: 0; z-index: 10; background: rgba(5, 5, 5, 0.9); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: #a0aab5; text-decoration: none; font-size: 1em; transition: color 0.3s; font-weight: 500; }
+        .nav-links a:hover { color: #0d6efd; }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
+        .section-header { margin-top: 40px; margin-bottom: 40px; text-align: center; }
+        .section-header h2 { font-size: 2.5em; color: #ffffff; margin-bottom: 10px; }
+        .section-header p { color: #a0aab5; font-size: 1.1em; }
+        
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .portfolio-item { background: rgba(0, 0, 0, 0.8); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; }
+        .portfolio-item:hover { box-shadow: 0 0 25px rgba(13, 110, 253, 0.3); transform: translateY(-5px); }
+        .portfolio-item h4 { text-align: center; padding: 20px; margin: 0; color: #ffffff; font-weight: 600; background: linear-gradient(to top, #000, transparent); font-size: 0.95em;}
+        
+        /* 16:9 Cinematic Format */
+        .media-box { width: 100%; aspect-ratio: 16 / 9; background-color: #11151c; border-bottom: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; }
+        .media-box video, .media-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        
+        @media (max-width: 768px) { 
+            nav { padding: 15px 10px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .section-header h2 { font-size: 2em; } 
+        }
+    </style>
+</head>
+<body>
+    <div class="background-effects"><div class="orb orb-blue"></div><div class="orb orb-teal"></div></div>
+    
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="trailers.html">Trailers</a>
+            <a href="animated.html">Animated Banners</a>
+            <a href="static.html" style="color: #0d6efd;">Static Banners</a>
+            <a href="testimonials.html">Testimonials</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section-header">
+            <h2>High-Impact Static Graphics</h2>
+            <p>Make a lasting first impression. Premium, scroll-stopping cover art and promotional graphics designed to dominate social media and ad campaigns.</p>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="media-box"><img src="at%20the%20top.png" alt="See You At The Top"></div>
+                <h4>See You At The Top</h4>
+            </div>
+            <div class="portfolio-item">
+                <div class="media-box"><img src="crisis.png" alt="Constitutional Crisis"></div>
+                <h4>Constitutional Crisis</h4>
+            </div>
+            <div class="portfolio-item">
+                <div class="media-box"><img src="faith%20can'tbe%20locked.png" alt="Faith Can't Be Locked"></div>
+                <h4>Faith Can't Be Locked</h4>
+            </div>
+            <div class="portfolio-item">
+                <div class="media-box"><img src="Gods_Bridge_cover_no_A_Memoir%20(1).png" alt="God's Bridge"></div>
+                <h4>God's Bridge</h4>
+            </div>
+            <div class="portfolio-item">
+                <div class="media-box"><img src="joy.png" alt="Joy Overcame Sorrow"></div>
+                <h4>Joy Overcame Sorrow</h4>
+            </div>
+            <div class="portfolio-item">
+                <div class="media-box"><img src="return%20to%20bodie.png" alt="Return to Bodie"></div>
+                <h4>Return to Bodie</h4>
+            </div>
+            <div class="portfolio-item">
+                <div class="media-box"><img src="stolen%20years.png" alt="My Stolen Years"></div>
+                <h4>My Stolen Years</h4>
+            </div>
+            <div class="portfolio-item">
+                <div class="media-box"><img src="the%20road%20to%20athens.png" alt="The Road to Athens"></div>
+                <h4>The Road to Athens</h4>
+            </div>
+            <div class="portfolio-item">
+                <div class="media-box"><img src="then%20the%20phone%20rings.png" alt="Then The Phone Rings"></div>
+                <h4>Then The Phone Rings</h4>
+            </div>
+            <div class="portfolio-item">
+                <div class="media-box"><img src="Waffles%20&%20Pip's%20Christmas%20Trail%20(1).png" alt="Waffles & Pip"></div>
+                <h4>Waffles & Pip</h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
