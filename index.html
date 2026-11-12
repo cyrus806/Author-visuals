@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyrus & Catherine Parker | Book Marketing Studio</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #050505; color: #e6edf3; line-height: 1.6; overflow-x: hidden; }
+        
+        /* Background */
+        .background-effects { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background: radial-gradient(circle at 50% 0%, #111a2e 0%, #050505 60%); }
+        .orb { position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.3; animation: float 12s infinite ease-in-out alternate; }
+        .orb-blue { background: #0d6efd; width: 400px; height: 400px; top: -100px; right: -100px; }
+        .orb-teal { background: #00d2ff; width: 300px; height: 300px; bottom: -50px; left: -150px; animation-delay: -6s; }
+        @keyframes float { 0% { transform: translateY(0px) scale(1); } 100% { transform: translateY(40px) scale(1.1); } }
+        
+        /* Navigation (Centered without the logo text) */
+        nav { padding: 20px 40px; display: flex; justify-content: center; align-items: center; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); position: sticky; top: 0; z-index: 10; background: rgba(5, 5, 5, 0.9); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: #a0aab5; text-decoration: none; font-size: 1em; transition: color 0.3s; font-weight: 500; }
+        .nav-links a:hover { color: #0d6efd; }
+        
+        .tagline-bar { text-align: center; padding: 15px; background: linear-gradient(90deg, rgba(13, 110, 253, 0) 0%, rgba(13, 110, 253, 0.2) 50%, rgba(13, 110, 253, 0) 100%); border-bottom: 1px solid rgba(13, 110, 253, 0.3); font-size: 1em; font-weight: 600; letter-spacing: 1px; color: #00d2ff; text-transform: uppercase; }
+        
+        header { text-align: center; padding: 80px 20px 40px; }
+        h1.main-title { font-size: 3em; font-weight: 800; color: #ffffff; margin-bottom: 15px; letter-spacing: -1px; line-height: 1.2; }
+        h2.sub-title { color: #0d6efd; font-weight: 400; font-size: 1.3em; letter-spacing: 1px; }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
+        .glass-box { background: rgba(20, 25, 35, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 40px; margin-bottom: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+        
+        .team-grid { display: flex; gap: 40px; margin-top: 40px; }
+        .team-member { flex: 1; background: rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 12px; border-top: 4px solid #0d6efd; text-align: center; }
+        
+        /* WIDER PROFILE PICTURES */
+        .profile-pic { 
+            width: 100%; 
+            max-width: 280px; 
+            height: 350px; 
+            border-radius: 12px; 
+            margin: 0 auto 20px auto; 
+            border: 2px solid #0d6efd; 
+            overflow: hidden; 
+        }
+        .profile-pic img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        
+        .team-member h3 { color: #ffffff; margin-bottom: 5px; font-size: 1.5em; }
+        .team-member span { color: #0d6efd; font-weight: bold; display: block; margin-bottom: 15px; font-size: 0.85em; text-transform: uppercase; letter-spacing: 1px; }
+        .team-member p { color: #a0aab5; font-size: 0.95em; }
+
+        .services-title { text-align: center; font-size: 2em; color: #ffffff; margin-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 15px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .service-card { background: rgba(20, 25, 35, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 30px; transition: transform 0.3s ease; border-left: 4px solid #0d6efd; }
+        .service-card:hover { transform: translateY(-5px); border-color: #00d2ff; }
+        .service-card h3 { color: #ffffff; font-size: 1.3em; margin-bottom: 10px; }
+        .service-card p { color: #a0aab5; font-size: 0.95em; }
+
+        .btn { display: inline-block; background-color: #0d6efd; color: white; padding: 15px 40px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.1em; margin-top: 25px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4); border: none; cursor: pointer; }
+        .btn:hover { background-color: #0b5ed7; box-shadow: 0 8px 25px rgba(13, 110, 253, 0.6); transform: translateY(-2px); }
+        
+        .contact-section { text-align: center; padding: 80px 20px; position: relative; z-index: 1; background: linear-gradient(to top, rgba(13, 110, 253, 0.1), transparent); }
+        
+        .form-container { max-width: 700px; margin: 50px auto 0 auto; background: rgba(20, 25, 35, 0.8); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); text-align: left; }
+        .form-row { display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+        .form-row input, .form-container input, .form-container textarea { flex: 1; width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #30363d; background-color: #0d1117; color: white; font-size: 1em; font-family: inherit; }
+        .form-container textarea { resize: vertical; min-height: 120px; margin-bottom: 20px; }
+        .form-container input:focus, .form-container textarea:focus { outline: none; border-color: #0d6efd; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) { 
+            nav { padding: 15px 10px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .team-grid { flex-direction: column; } 
+            h1.main-title { font-size: 2.2em; } 
+            .glass-box { padding: 25px; } 
+            .form-row { flex-direction: column; } 
+            .profile-pic { max-width: 100%; height: 400px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-effects"><div class="orb orb-blue"></div><div class="orb orb-teal"></div></div>
+    
+    <nav>
+        <div class="nav-links">
+            <a href="index.html" style="color: #0d6efd;">Home</a>
+            <a href="trailers.html">Trailers</a>
+            <a href="animated.html">Animated Banners</a>
+            <a href="static.html">Static Banners</a>
+            <a href="testimonials.html">Testimonials</a>
+        </div>
+    </nav>
+    
+    <div class="tagline-bar">Stop Blending In. Give Your Book The Cinematic Launch It Deserves.</div>
+    
+    <header>
+        <h1 class="main-title">Cyrus & Catherine Parker</h1>
+        <h2 class="sub-title">Premium Book Trailers & Motion Graphics</h2>
+    </header>
+    
+    <div class="container">
+        <div class="glass-box">
+            <h2 style="text-align: center; color: white; margin-bottom: 20px;">A Collaborative Studio</h2>
+            <p style="text-align: center; color: #a0aab5; margin-bottom: 30px;">We deliver visuals that make indie authors look like they have a Big Five marketing budget.</p>
+            
+            <div class="team-grid">
+                
+                <div class="team-member">
+                    <div class="profile-pic">
+                        <img src="cyrus.png" alt="Cyrus">
+                    </div>
+                    <h3>Cyrus</h3>
+                    <span>Lead Visual Designer & Animator</span>
+                    <p>Handles the technical heavy lifting—animating, rendering cinematic trailers, and crafting the atmospheric visuals and static graphics that bring your book to life.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="profile-pic">
+                        <img src="catherine.jpg" alt="Catherine Parker">
+                    </div>
+                    <h3>Catherine Parker</h3>
+                    <span>Creative Director & Marketing Strategist</span>
+                    <p>Works directly with authors and publishers to translate the heart of your story into a compelling marketing campaign, ensuring every visual exceeds your expectations.</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <h2 class="services-title">What We Deliver</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🎬 Cinematic Book Trailers</h3>
+                <p>High-end video production that makes your book launch feel like a blockbuster movie. Includes professional pacing, sound design, visual effects, and voiceover to immerse your readers.</p>
+            </div>
+            <div class="service-card">
+                <h3>✨ Dynamic Motion Banners</h3>
+                <p>Eye-catching, looping motion graphics designed specifically for social media feeds, Amazon ads, and newsletters. We make sure your book stops the scroll and instantly grabs attention.</p>
+            </div>
+            <div class="service-card">
+                <h3>🖼️ High-Impact Static Graphics</h3>
+                <p>Premium, scroll-stopping cover art and promotional graphics. Designed to dominate social media and ad campaigns, giving your book a lasting first impression.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="contact" class="contact-section">
+        <h2 style="color: white; font-size: 2.5em; margin-bottom: 15px; font-weight: 800;">Let's Make Your Book Stand Out.</h2>
+        <p style="color: #a0aab5; font-size: 1.2em; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Ready to give your book the cinematic launch it deserves? Stop blending in and let's create visuals that demand attention.
+        </p>
+
+        <div class="form-container">
+            <form action="https://formspree.io/f/xnpdqydw" method="POST">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <input type="text" name="book_title" placeholder="Book Title (Optional)" style="margin-bottom: 20px;">
+                <textarea name="message" placeholder="What kind of visuals are you looking for? (Trailer, Banner, etc.)" required></textarea>
+                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+            </form>
+        </div>
+        
+        <!-- EMAIL CORRECTED HERE -->
+        <p style="color: #555; margin-top: 30px; font-size: 0.9em;">
+            Or email us directly at: <a href="mailto:cyrustrailers@gmail.com" style="color: #0d6efd; text-decoration: none;">cyrustrailers@gmail.com</a>
+        </p>
+    </div>
+</body>
+</html>
